@@ -34,11 +34,11 @@ function createItem( request, response ) {
   todoList[ id ] = item;
   response.writeHead( 201, {
     'Content-Type' : 'text/plain',
-    'Location' : '/item/' + id
+    'Location' : '/todo/' + id
   });
   response.end( item );
 }
-router.post( '/todos', createItem );
+router.post( '/todo', createItem );
 
 function readItem( request, response ) {
   var id = request.params.id,
@@ -58,7 +58,7 @@ function readItem( request, response ) {
   });
   response.end( item );
 }
-router.get( '/todos/:id', readItem );
+router.get( '/todo/:id', readItem );
 
 function deleteItem( request, response ) {
   var id = request.params.id;
@@ -78,7 +78,7 @@ function deleteItem( request, response ) {
   });
   response.end( '' );
 }
-router.delete( '/todos/:id', deleteItem );
+router.delete( '/todo/:id', deleteItem );
 
 function readList( request, response ) {
   var item,
@@ -111,4 +111,4 @@ function readList( request, response ) {
   });
   response.end( listString );
 }
-router.get( '/todos', readList );
+router.get( '/todo', readList );
