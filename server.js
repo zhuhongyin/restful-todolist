@@ -14,7 +14,7 @@ server = Http.createServer( function( request, response ) {
       console.log( error.message, error.stack );
       response.writeHead( 400 );
     }
-    response.end( 'RESTful API Server is running!' );
+    response.end( '\n' );
   });
 });
 
@@ -38,7 +38,7 @@ function createItem( request, response ) {
   });
   response.end( item );
 }
-router.post( '/todo', createItem );
+router.post( '/todos', createItem );
 
 function readItem( request, response ) {
   var id = request.params.id,
@@ -58,7 +58,7 @@ function readItem( request, response ) {
   });
   response.end( item );
 }
-router.get( '/item/:id', readItem );
+router.get( '/todos/:id', readItem );
 
 function deleteItem( request, response ) {
   var id = request.params.id;
@@ -78,7 +78,7 @@ function deleteItem( request, response ) {
   });
   response.end( '' );
 }
-router.delete( '/item/:id', deleteItem );
+router.delete( '/todos/:id', deleteItem );
 
 function readList( request, response ) {
   var item,
@@ -111,4 +111,4 @@ function readList( request, response ) {
   });
   response.end( listString );
 }
-router.get( '/list', readList );
+router.get( '/todos', readList );
