@@ -73,7 +73,7 @@ function deleteItem( request, response ) {
   console.log( 'Delete item', id);
 
   todoList[ id ] = undefined;
-  response.writeHead( 204, {
+  response.writeHead( 200, {
     'Content-Type' : 'text/plain'
   });
   response.end( '' );
