@@ -111,6 +111,7 @@ function readList( request, response ) {
   });
   response.end( listString );
 }
+<<<<<<< HEAD:restful/restful-api-todolist.js
 router.get( '/todo', readList );
 
 function updateItem( request, response ){
@@ -134,3 +135,6 @@ function updateItem( request, response ){
   response.end( item );
 }
 router.put( '/todo/:id', updateItem );
+=======
+router.get( '/todo', readList );
+>>>>>>> parent of fe77360... Added Update operation:server.js
